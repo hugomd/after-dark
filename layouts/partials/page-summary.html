@@ -1,8 +1,9 @@
 <article itemscope itemtype="http://schema.org/CreativeWork">
   <header>
     <h2 itemprop="headline">
+      {{ if lt .Weight 0 }} (Pinned) {{ end }}
       <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
+    </h2
     {{ if eq .Type "post" }}
       <p class="muted">{{ partial "post/meta" . }}</p>
     {{ end }}
