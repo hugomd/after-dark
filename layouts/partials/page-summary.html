@@ -1,13 +1,15 @@
 <article itemscope itemtype="http://schema.org/CreativeWork">
   <header>
-    <h2 itemprop="headline">
-      {{ if lt .Weight 0 }} (Pinned) {{ end }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2
-    {{ if eq .Type "post" }}
-      <p class="muted">{{ partial "post/meta" . }}</p>
-    {{ end }}
+    <!-- <h2 itemprop="headline"> -->
+
+      {{ if eq .Type "post" }}
+        <span class="muted" style="width:130px;display:inline-block;text-align:right;margin-right:15px;">{{ partial "post/meta" . }}</span>
+      {{ end }}
+      {{ if lt .Weight 0 }} <b><a href="{{ .Permalink }}">{{ .Title }}</a></b>
+      {{ else }} <a href="{{ .Permalink }}">{{ .Title }}</a> {{ end }}
+    <!-- </h2> -->
   </header>
+  <!--
   {{ if .Description }}
     <blockquote itemprop="about">{{ .Description }}</blockquote>
   {{ end }}
@@ -16,5 +18,5 @@
   </div>
   {{ if .Truncated }}
     <p><a itemprop="url" href="{{ .RelPermalink }}">Read More&nbsp;&raquo;</a></p>
-  {{ end }}
+  {{ end }} -->
 </article>
