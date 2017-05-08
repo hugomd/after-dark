@@ -1,6 +1,6 @@
 {{ if ne .Site.Params.footer false }}
 <p class="muted">
-  &copy; Hugo M&uuml;ller-Downing 2017.
+  &copy; {{ .Site.Params.author }} {{ .Now.Year }}.
   Using an abridged <a href='https://github.com/comfusion/after-dark'>After Dark</a> theme.
 </p>
 {{ end }}
